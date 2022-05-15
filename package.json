@@ -1,13 +1,13 @@
 {
-	"name": "ssr-boilerplate",
+	"name": "auckland-game",
 	"version": "2.0.0",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/denchiklut/ssr-boilerplate.git"
 	},
 	"license": "MIT",
-	"description": "ssr boilerplate",
-	"author": "Karl: ollylut@gmail.com",
+	"description": "Destroy Asteroids Game by Auckland Team (ssr)",
+	"author": "",
 	"scripts": {
 		"dev": "cross-env NODE_ENV=development ts-node src/server",
 		"spa": "cross-env NODE_ENV=development webpack serve --config webpack/configs/spa.config.ts",

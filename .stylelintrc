@@ -5,6 +5,7 @@
 		"stylelint-config-standard-scss",
 		"stylelint-config-prettier"
 	],
+	"ignoreFiles": ["**/*.tsx", "**/*.html", "**/*.md"],
 	"rules": {
 		"no-descending-specificity": null,
 		"order/properties-order": [
