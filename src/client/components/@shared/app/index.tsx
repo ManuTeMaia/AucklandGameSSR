@@ -10,7 +10,14 @@ export const App = () => (
 	<Suspense fallback={<Loader />}>
 		<Routes>
 			<Route index element={<HomePage />} />
-			<Route path='/about' element={<AboutPage />} />
+			<Route path='/game' element={<AboutPage />} />
+			<Route path='/sign-in' element={<HomePage />} />
+			<Route path='/sign-up' element={<HomePage />} />
+			<Route path='/profile' element={<HomePage />} />
+			<Route path='/results' element={<HomePage />} />
+			<Route path='/forum' element={<HomePage />} />
+			<Route path='/settings' element={<HomePage />} />
+			<Route path='*' element={<HomePage />} />
 		</Routes>
 	</Suspense>
 )

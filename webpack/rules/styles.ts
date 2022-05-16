@@ -10,7 +10,7 @@ export const cssRule = {
 			options: {
 				modules: {
 					exportLocalsConvention: 'camelCaseOnly',
-					localIdentName: '[local]__[contenthash:base64:5]'
+					localIdentName: '[local]__[hash:base64:5]'
 				}
 			}
 		},
