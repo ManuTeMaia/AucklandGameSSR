@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 import useForm from 'client/hooks/useForm'
 import { SignUpForm } from './types'
 import { initialState, TextFieldsSignUp } from './shared'
-import TextInput from 'components/inputs'
+import TextInput, { TextInputProps } from 'components/inputs'
 import Form from 'components/form'
 import { RouterPath } from '@shared/consts'
 import HomePageWrap from 'components/homePageWrap'
-import { useAppDispatch } from 'src/client'
+import { useAppDispatch } from '@shared/app'
 import { signUp } from '../actions'
 
 const SignUp: FC = () => {
@@ -33,7 +33,7 @@ const SignUp: FC = () => {
 							validType={validType}
 							onChange={handleChange}
 							onBlur={handleBlur}
-							value={values[name]}
+							value={values[name as keyof SignUpForm]}
 						/>
 					)
 				)}

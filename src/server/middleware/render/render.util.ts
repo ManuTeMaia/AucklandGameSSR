@@ -6,7 +6,7 @@ import type { Stats } from './render.types'
 
 const isDev = process.env.NODE_ENV === 'development'
 
-export const getHtml = (reactHtml: string, chunkExtractor: ChunkExtractor) => {
+export const getHtml = (reactHtml: string, chunkExtractor: ChunkExtractor, preloadedState: {}) => {
 	const scriptTags = chunkExtractor.getScriptTags()
 	const linkTags = chunkExtractor.getLinkTags()
 	const styleTags = chunkExtractor.getStyleTags()
@@ -22,6 +22,9 @@ export const getHtml = (reactHtml: string, chunkExtractor: ChunkExtractor) => {
     </head>
     <body>
         <div id='root'>${reactHtml}</div>
+        <script>
+          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')} 
+          </script>
         ${scriptTags}
     </body>
 </html>`

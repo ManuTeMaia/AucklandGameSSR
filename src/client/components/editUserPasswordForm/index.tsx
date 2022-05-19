@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import useForm from 'src/hooks/useForm'
-import TextInput from '../Inputs/TextInput'
+import TextInput from '../inputs/TextInput'
 import Form from '../form'
 import { initialState, TextFieldsChangePassword } from './shared'
 import { changeUserPasswordRequest } from 'src/components/pages/ProfileEdit/api'

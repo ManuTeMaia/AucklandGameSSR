@@ -1,4 +1,4 @@
-import { SelectorResponse } from 'client/core/store/selectors'
+import { SelectorResponse } from 'client/../../../../core/store/selectors'
 import { UserState } from './types'
 import { useAppSelector } from 'src/client'
 

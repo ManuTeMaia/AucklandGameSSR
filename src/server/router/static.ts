@@ -1,5 +1,5 @@
-import { Router, static as staticRout } from 'express'
+import { Router, static as staticRoute } from 'express'
 
 export function staticRoutes(router: Router) {
-	router.use(staticRout('dist'))
+	router.use(staticRoute('dist'))
 }

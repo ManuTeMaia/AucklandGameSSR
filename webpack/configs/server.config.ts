@@ -11,7 +11,7 @@ const config: Configuration = {
 	devtool: IS_DEV ? false : 'source-map',
 	entry: './src/client/components/@shared/app',
 	mode: IS_DEV ? 'development' : 'production',
-	context: ROOT_DIR,
+	//context: ROOT_DIR,
 	output: {
 		filename: 'app.server.js',
 		libraryTarget: 'commonjs2',

@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import styles from 'styles/base.scss'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, Location } from 'react-router-dom'
 
 interface BottomMenuItemType {
 	icon: string
@@ -8,9 +8,9 @@ interface BottomMenuItemType {
 	url: string
 	handler?: () => void
 }
-const isHidden = (url: string): string => {
-	const location = useLocation()
-	if (location.pathname === url) {
+
+const isHidden = (loc: Location, url: string): string => {
+	if (loc.pathname === url) {
 		return `${styles.bottomMenuItem} ${styles.hidden}`
 	} else {
 		return `${styles.bottomMenuItem}`
@@ -18,10 +18,12 @@ const isHidden = (url: string): string => {
 }
 
 const BottomMenuItem: FC<BottomMenuItemType> = ({ icon, title, url, handler }) => {
+	const location = useLocation()
+
 	return (
 		<Link
 			to={url}
-			className={isHidden(url)}
+			className={isHidden(location, url)}
 			onClick={event => {
 				if (handler) {
 					event.preventDefault()

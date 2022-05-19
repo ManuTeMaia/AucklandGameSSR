@@ -2,9 +2,9 @@ import React, { FC, ReactNode, useCallback, useLayoutEffect } from 'react'
 import styles from 'styles/base.scss'
 import BottomMenuItem from 'components/bottomMenuItem'
 import { useAuth } from 'pages/Auth/selectors'
-import history from 'src/client/core/history'
+import history from 'core/history'
 import { RouterPath } from '@shared/consts'
-import { useAppDispatch } from 'src/client'
+import { useAppDispatch } from '@shared/app'
 import { logout } from 'pages/Auth/actions'
 
 type TemplatePageProps = {

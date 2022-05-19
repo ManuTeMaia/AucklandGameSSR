@@ -7,7 +7,7 @@ import { initialState, TextFieldsLogin } from './shared'
 import Form from 'components/form'
 import { RouterPath } from '@shared/consts'
 import HomePageWrap from 'components/homePageWrap'
-import { useAppDispatch } from 'src/client'
+import { useAppDispatch } from '@shared/app'
 import { signIn } from '../actions'
 
 const Login: FC = () => {
@@ -34,7 +34,7 @@ const Login: FC = () => {
 						validType={validType}
 						onChange={handleChange}
 						onBlur={handleBlur}
-						value={values[name]}
+						value={values[name as keyof LoginForm]}
 					/>
 				))}
 			</Form>

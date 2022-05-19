@@ -4,7 +4,7 @@ import {
 	LoadStatus,
 	ParamForFormRequest,
 	User
-} from 'src/shared/types'
+} from '@shared/types'
 import { userActions } from './actions'
 import { LoginForm } from './SignIn/types'
 import { SignUpForm } from './SignUp/types'

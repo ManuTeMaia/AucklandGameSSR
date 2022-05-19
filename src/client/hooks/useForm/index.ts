@@ -17,9 +17,12 @@ const useForm = <T extends object = {}>({
 		[values]
 	)
 
-	const handleChange: UseFormResult['handleChange'] = useCallback(({ target }) => {
-		setFieldValue(target.name, target.value)
-	}, [])
+	const handleChange: UseFormResult['handleChange'] = useCallback(
+		({ target }) => {
+			setFieldValue(target.name, target.value)
+		},
+		[setFieldValue]
+	)
 
 	const handleBlur: UseFormResult['handleBlur'] = ({ target }) => {
 		const validate = useValidate(target)

@@ -1,4 +1,4 @@
-import { applyMiddleware, createStore } from 'redux'
+import { applyMiddleware, legacy_createStore as createStore } from 'redux'
 import { SagaMiddleware } from 'redux-saga'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { rootReducer } from './rootReducer'
@@ -11,7 +11,7 @@ export default function configureStore(saga: SagaMiddleware) {
 	const enhancers = [middlewareEnhancer]
 	const composedEnhancers = composeWithDevTools(...enhancers)
 
-	const store = createStore(rootReducer, undefined, composedEnhancers)
+	const PreloadedState = IS_SERVER ? window.__PRELOADED_STATE__ : undefined
 
-	return store
+	return createStore(rootReducer, PreloadedState, composedEnhancers)
 }
